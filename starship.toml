@@ -1,0 +1,71 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$docker_context\
+$package\
+$cmake\
+$golang\
+$helm\
+$java\
+$nodejs\
+$python\
+$red\
+$ruby\
+$scala\
+$terraform\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$kubernetes\
+$env_var\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+$character"""
+
+[package]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+truncation_length = 8
+
+[status]
+style = "bold italic fg:purple"
+format = '[\[$status\]]($style) '
+disabled = false
+
+[time]
+disabled = false
+format = '[$time]($style) '
+time_format = "%T"
+
+[gcloud]
+disabled = false
+
+[git_status]
+staged = '[++\($count\)](green)'
+
+[kubernetes]
+disabled = false
+
+[kubernetes.context_aliases]
+"super_long_cluster_name" = "prod"
+"super_long_cluster_name2" = "dev"
+
+[java]
+disabled = true
+

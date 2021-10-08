@@ -1,0 +1,26 @@
+[user]
+	email = $USER@$DOMAIN
+	name = MyFirstName MyLastName
+#TODO: add security keys for commit sign
+
+[pull]
+	ff = only # not so sure about that one
+
+[core]
+    pager = delta  # beautiful git diff: https://github.com/dandavison/delta 
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
+# For open source contribution use github creds
+[includeIf "gitdir:~/code/oss/"]
+  path = .gitconfig-flyte
